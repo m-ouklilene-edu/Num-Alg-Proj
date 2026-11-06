@@ -1,59 +1,51 @@
-# Numerical simulation of two coupled oscillators
+# Black Hole Ringdown Simulation
 
-**Introduction to Numerical Algorithms — final project proposal**  
-**Student:** Mohamed OUKLILENE (T2; individual project subject to instructor approval)
+## Overview
 
-## Aim
+This project aims to numerically simulate **black hole ringdown**, the damped oscillations that occur when a black hole is disturbed.
 
-Compare two numerical methods for solving the motion of two masses joined by
-springs. The normal-mode solution provides a reference, so we can measure the
-error of each method rather than judging the plots by eye.
+We will study how small perturbations evolve around a Schwarzschild (non-rotating) black hole and how their characteristic oscillations, known as **quasinormal modes**, can be extracted from the resulting waveforms.
 
-## Model
+The project is part of the *Introduction to Numerical Algorithms* course.
 
-For displacements $x_1,x_2$, masses $m_1,m_2$, and spring constants
-$k_1,k_2,k_3$,
+## Mathematical Model
 
-$$
-\begin{aligned}
-m_1\ddot x_1 &= -(k_1+k_2)x_1+k_2x_2,\\
-m_2\ddot x_2 &= k_2x_1-(k_2+k_3)x_2.
-\end{aligned}
+We consider a wave equation of the form
+
+\frac{\partial^2 \Psi}{\partial r\_\*^2}\
++\
+V(r)\Psi=0,\
 $$
 
-We will use $m_1=m_2=1$, $k_1=k_3=1$, $k_2=2$, with initial
-displacements $(0,0.4)$ and velocities $(1,0)$. Other parameters can be
-explored after the basic comparison works.
+where:
 
-## Numerical methods
+- $\Psi$ represents the perturbation.
+- $r\_\*$ is the tortoise coordinate.
+- $V(r)$ is the effective potential associated with the black hole.
 
-1. Convert the equations to a first-order system for
-   $(x_1,x_2,v_1,v_2)$.
-2. Implement the explicit Euler method and the fourth-order Runge–Kutta
-   method (RK4) in Python.
-3. Find the normal frequencies and modes from the matrix eigenvalue problem
-   $K\eta=\omega^2 M\eta$. Use their analytic time dependence as a reference.
+## Objectives
 
-## Comparison and expected results
+- Implement a numerical solver using finite differences.
+- Simulate the evolution of an initial perturbation.
+- Visualize the resulting ringdown waveform.
+- Extract the oscillation frequencies and damping rates.
+- Compare the numerical results with theoretical predictions.
+- Investigate numerical stability, accuracy, and convergence.
 
-- Plot both masses' displacement against time for the numerical and
-  normal-mode solutions.
-- Repeat with several time steps. Plot the maximum displacement error against
-  step size on logarithmic axes and check the expected first- and fourth-order
-  trends.
-- Plot the total energy to compare numerical energy drift.
-- Explain when a method is sufficiently accurate and how its step size affects
-  the result.
+## Methods and Tools
 
-The energy is
+We plan to use **Python**, along with NumPy, SciPy, and Matplotlib.
 
-$$
-E=\frac12m_1v_1^2+\frac12m_2v_2^2+
-  \frac12k_1x_1^2+\frac12k_2(x_2-x_1)^2+\frac12k_3x_2^2.
-$$
+The project will focus on numerical integration, finite-difference approximations, convergence testing, and numerical analysis of oscillatory signals.
 
-## Planned deliverables
+## Project Status
 
-The finished repository will contain the Python implementation, reproducible
-plots, and a short discussion of numerical error and limitations. This README
-records the topic and plan for the initial project selection.
+**In development.**
+
+The numerical implementation, results, and documentation will be added as the project progresses.
+
+## Authors
+
+Final project for the *Introduction to Numerical Algorithms* course.
+
+You can copy this directly into your repository's `README.md`. GitHub supports the headings, lists, inline mathematical expressions, and display equations used here.
