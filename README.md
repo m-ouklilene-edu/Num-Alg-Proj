@@ -12,6 +12,7 @@ The project is part of the *Introduction to Numerical Algorithms* course.
 
 We consider a wave equation of the form
 
+$$
 \frac{\partial^2 \Psi}{\partial r\_\*^2}\
 +\
 V(r)\Psi=0,\
@@ -45,7 +46,4 @@ The project will focus on numerical integration, finite-difference approximation
 The numerical implementation, results, and documentation will be added as the project progresses.
 
 ## Authors
-
-Final project for the *Introduction to Numerical Algorithms* course.
-
-You can copy this directly into your repository's `README.md`. GitHub supports the headings, lists, inline mathematical expressions, and display equations used here.
+M.O
